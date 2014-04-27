@@ -13,5 +13,5 @@ How to use it?
 * Edit the config.php with your configuration.
 * Deploy on a web server.
 * Run compozer install for downloading dependencies.
-* Add a calendar using URL http://{your_hostname}/{install_path}/ft2ical.php
+* Add a calendar using URL http://{your_hostname}/{install_path}
 * Enjoy.
