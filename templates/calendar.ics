@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+VERSION:2.0
+PRODID:-//Stefan Oderbolz//GFTCalendar//EN
+{% for event in events %}
+BEGIN:VEVENT
+UID:{{event.uid}}
+SUMMARY:{{event.summary}}
+DESCRIPTION:{{event.description}}
+DTSTART;VALUE=DATE:{{event.dtstart}}
+DTEND;VALUE=DATE:{{event.dtend}}
+LOCATION:{{event.location}}
+URL;VALUE=URI:{{event.url}}
+STATUS:CONFIRMED
+END:VEVENT
+{% endfor %}
+END:VCALENDAR
