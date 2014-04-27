@@ -6,4 +6,6 @@
 	$DATE_FORMAT="add yours";
 
 	$CAL_NAME="add yours";
+	$CAL_DESC="add yours";
+	$CAL_TZ="add yours";
 ?>

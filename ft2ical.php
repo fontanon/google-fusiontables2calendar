@@ -8,7 +8,9 @@
 	$response = \Httpful\Request::get($query_uri)->send();
 
 	$calendar = array(
-		"name" => $CAL_NAME
+		"name" => $CAL_NAME,
+		"description" => $CAL_DESC,
+		"timezone" => $CAL_TZ
 	);
 
 	$events = array();

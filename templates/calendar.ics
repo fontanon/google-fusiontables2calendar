@@ -2,7 +2,11 @@ BEGIN:VCALENDAR
 METHOD:PUBLISH
 VERSION:2.0
 PRODID:-//fontanon//ft2ical//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 X-WR-CALNAME:{{calendar.name}}
+X-WR-CALDESC:{{calendar.description}}
+X-WR-TIMEZONE:{{calendar.timezone}}
 {% for event in events %}
 BEGIN:VEVENT
 UID:{{event.uid}}
