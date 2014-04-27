@@ -1,7 +1,8 @@
 BEGIN:VCALENDAR
 METHOD:PUBLISH
 VERSION:2.0
-PRODID:-//Stefan Oderbolz//GFTCalendar//EN
+PRODID:-//fontanon//ft2ical//EN
+X-WR-CALNAME:{{calendar.name}}
 {% for event in events %}
 BEGIN:VEVENT
 UID:{{event.uid}}

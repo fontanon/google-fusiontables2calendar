@@ -7,6 +7,10 @@
 	$query_uri = $GFT_QUERY_URI."SELECT%20".rawurlencode($COL_NAMES)."%20FROM%20".$TABLE_ID."&key=".$API_KEY;
 	$response = \Httpful\Request::get($query_uri)->send();
 
+	$calendar = array(
+		"name" => $CAL_NAME
+	);
+
 	$events = array();
 	foreach ($response->body->rows as $row) {
 		$dtstart = date_create_from_format($DATE_FORMAT, $row[2]);
@@ -26,18 +30,18 @@
 
 	$template_loader = new Twig_Loader_Filesystem('./templates');
 	$twig = new Twig_Environment($template_loader);
-	$calendar = $twig->render('calendar.ics', array('events' => $events));
+	$ics = $twig->render('calendar.ics', array('events' => $events, "calendar" => $calendar));
 
 	if (isset($_GET['debug'])) 
 	{
-		echo "<pre>" . $calendar . "</pre>";
+		echo "<pre>" . $ics . "</pre>";
 		exit;
 	} 
 	else 
 	{
 		header('Content-type: text/calendar; charset=utf-8');
 		header('Content-Disposition: inline; filename=gft_calendar.ics');
-		echo $calendar;
+		echo $ics;
 		exit;
 	}
 ?>
