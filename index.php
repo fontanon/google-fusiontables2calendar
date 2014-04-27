@@ -22,8 +22,8 @@
 			"uid" => uniqid(),
 			"summary" => $string = trim(preg_replace('/\s\s+/', ' ', $row[0])),
 			"description" => $string = trim(preg_replace('/\s\s+/', ' ', $row[1])),
-			"dtstart" => $dtstart->format('Ymd'),
-			"dtend" => $dtend->format('Ymd'),
+			"dtstart" => $dtstart->format('YmdHis'),
+			"dtend" => $dtend->format('YmdHis'),
 			"location" => $string = trim(preg_replace('/\s\s+/', ' ', $row[4])),
 			"url" => $row[5]
 		);
